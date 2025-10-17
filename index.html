@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hộp quà gửi em</title>
+<style>
+body {
+  background: #f6e6f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+.gift-box {
+  width: 150px;
+  height: 150px;
+  background: #e35b87;
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.gift-box:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 70px;
+  width: 10px;
+  height: 150px;
+  background: #fff;
+}
+.gift-box:after {
+  content: '';
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 150px;
+  height: 10px;
+  background: #fff;
+}
+.message {
+  display: none;
+  margin-top: 20px;
+  color: #444;
+  font-size: 16px;
+  max-width: 80%;
+}
+</style>
+</head>
+<body>
+  <div class="gift-box" onclick="openGift()"></div>
+  <p class="message" id="msg">
+    A nghĩ mối quan hệ này nên dừng lại th. A còn thương e, nhưng e cũng thấy, dạo gần đây giữa hai đứa mình không còn như trước nữa...<br><br>
+    Cho a được xin lỗi lần cuối nhé! A xin lỗi vì những lời hứa như chở e đi học vào mùa đông hay đi chơi cùng e vào những dịp đặc biệt mà a đã không thực hiện được.<br><br>
+    Nhưng thật lòng, từ khi quen e đến giờ, a vui và biết ơn vì điều đó.<br><br>
+    A vẫn sẽ giữ liên lạc, nên nếu sau này e cần hỏi a gì về học tập hay đại học, cứ nhắn nhé.<br><br>
+    Dù mọi chuyện như nào, a vẫn mong e học thật tốt và tìm được một ngôi trường đại học thật phù hợp.<br><br>
+    À, sắp tới thi tốt nhaa, đừng áp lực quá, vẫn còn cuối kì nữa mà 💖
+  </p>
+
+  <audio id="music" src="https://cdn.pixabay.com/download/audio/2021/09/27/audio_3a9e245b4e.mp3?filename=sad-piano-melancholy-11466.mp3"></audio>
+
+<script>
+function openGift() {
+  document.querySelector('.gift-box').style.display = 'none';
+  document.getElementById('msg').style.display = 'block';
+  document.getElementById('music').play();
+}
+</script>
+</body>
+</html>
